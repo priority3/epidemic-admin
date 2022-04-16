@@ -14,7 +14,7 @@ onBeforeMount(() => {
   <router-view />
 </template>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

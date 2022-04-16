@@ -9,8 +9,8 @@
     <div v-if="settings.showNavbarTitle" class="heardCenterTitle">{{ settings.showNavbarTitle }}</div>
     <div v-if="settings.ShowDropDown" class="right-menu rowSC">
       <ScreenFull />
-      <SizeSelect />
-      <LangSelect />
+      <!-- <SizeSelect />
+      <LangSelect /> -->
       <el-dropdown trigger="click" size="medium">
         <div class="avatar-wrapper">
           <img src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80"
@@ -60,9 +60,7 @@ const appStore = useAppStore()
 const toggleSideBar = () => {
   appStore.M_toggleSideBar()
 }
-/*
- * 退出登录
- * */
+// 退出登录
 const router = useRouter()
 const route = useRoute()
 const loginOut = () => {

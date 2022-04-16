@@ -21,7 +21,7 @@ onUnmounted(() => {
 })
 
 const click = () => {
-  if (!screenfull.enabled) {
+  if (screenfull.enabled) {
     ElMessage({
       message: 'you browser can not work',
       type: 'warning'
