@@ -5,7 +5,12 @@ export const constantRoutes = [
 		path: '/redirect',
 		component: Layout,
 		hidden: true,
-		children: []
+		children: [
+			{
+				path: '/redirect/:path(.*)',
+				component: () => import('@/views/redirect')
+			}
+		]
 	},
 	{
 		path: '/login',
@@ -14,13 +19,13 @@ export const constantRoutes = [
 	},
 	{
 		path: '/404',
-		component: () => '@/views/404/index.vue',
+		component: () => import('@/views/404.vue'),
 		hidden: true
 	},
 	{
 		path: '/',
 		component: Layout,
-		redirect: 'home',
+		redirect: '/home',
 		children: [
 			{
 				path: 'home',
@@ -29,7 +34,21 @@ export const constantRoutes = [
 				meta: { title: '主页', elSvgIcon: 'Fold' }
 			}
 		]
-	}
+	},
+	{
+		path: '/',
+		component: Layout,
+		redirect: '/redirect',
+		children: [
+			{
+				path: 'test',
+				name: 'Test',
+				component: () => import('@/views/test/index.vue'),
+				meta: { title: '测试', elSvgIcon: 'Fold' }
+			}
+		]
+	},
+	{ path: '/:pathMatch(.*)', redirect: '/404', hidden: true }
 ]
 
 export const asyncRoutes = [{ path: '/:pathMatch(.*)', redirect: '/404', hidden: true }]
