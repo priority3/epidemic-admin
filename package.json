@@ -9,7 +9,8 @@
 		"build": "vite build --mode build",
 		"preview": "yarn run build && vite preview ",
 		"lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx,src --fix",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"commit": "git-cz"
 	},
 	"betterScripts": {
 		"dev": {
@@ -33,6 +34,7 @@
 	},
 	"devDependencies": {
 		"@babel/eslint-parser": "7.16.3",
+		"@commitlint/config-conventional": "^16.2.1",
 		"@types/echarts": "4.9.7",
 		"@types/mockjs": "1.0.3",
 		"@types/node": "15.0.1",
@@ -42,6 +44,11 @@
 		"@vitejs/plugin-vue": "1.10.2",
 		"@vitejs/plugin-vue-jsx": "1.3.1",
 		"better-npm-run": "^0.1.1",
+		"commitizen": "^4.2.4",
+		"commitlint": "^16.2.3",
+		"commitlint-config-cz": "^0.13.3",
+		"cz-conventional-changelog": "^3.3.0",
+		"cz-customizable": "^6.3.0",
 		"eslint": "7.32.0",
 		"eslint-config-prettier": "8.3.0",
 		"eslint-define-config": "1.2.0",
@@ -73,5 +80,10 @@
 	],
 	"engines": {
 		"node": ">= 14"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		}
 	}
 }
