@@ -6,7 +6,6 @@ import { onBeforeMount } from 'vue';
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 onBeforeMount(() => {
   // Do something before mounting : get token
-  console.log("this is do something");
 });
 </script>
 
