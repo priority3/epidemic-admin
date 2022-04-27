@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button></el-button>
+    <el-button>登录</el-button>
   </div>
 </template>
 
