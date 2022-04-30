@@ -5,10 +5,14 @@ NProgress.configure({ showSpinner: false })
 import 'nprogress/nprogress.css'
 import { usePermissionStore } from '@/store/permission'
 import { getToken } from '@/utils/auth'
+import { getPageTitle } from '@/utils'
 
 const whiteList = ['/login', '/404']
 router.beforeEach(async (to, from, next) => {
+	// 加载 progress
 	if (settings.isNeedNprogress) NProgress.start()
+	// title 设置
+	document.title = getPageTitle(to.meta.title)
 	if (getToken()) {
 		const permissionStore = usePermissionStore()
 		// 权限判断预留
